@@ -1,0 +1,140 @@
+/* =======================================================
+   🎨 التنسيقات العامة لشاشة الانتظار والتحميل (Splash Screen)
+======================================================= */
+
+* {
+    box-sizing: border-box;
+    /* 🔥 منع الوميض أو الظل الأزرق/الرمادي الشفاف تماماً عند الضغط على الهواتف */
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* الخلفية بيضاء تماماً */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: sans-serif;
+    
+    /* منع نسخ أو تحديد النصوص في الصفحات بالكامل لتبدو كتطبيق أصيل */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;         
+}
+
+.splash-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; 
+}
+
+/* كلاس مخصص لإخفاء العناصر برمجياً */
+.hidden {
+    display: none !important;
+}
+
+/* تنسيق صورة الشعار الأساسي الدائرية */
+.circle-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    -webkit-user-drag: none; /* منع سحب الصورة */
+}
+
+/* =======================================================
+   ✨ تصميم نافذة التنبيه العائمة المخصصة لشاشة الانتظار
+======================================================= */
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(165, 188, 212, 0.4); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.custom-alert-box {
+    background: rgba(255, 255, 255, 0.88); 
+    width: 100%;
+    max-width: 310px;
+    padding: 30px 22px 25px 22px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    animation: alertPopUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.custom-alert-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #ff7675; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+}
+
+.custom-alert-icon {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+}
+
+.custom-alert-title {
+    font-size: 21px;
+    font-weight: bold;
+    color: #0b2240;
+    margin: 0 0 12px 0;
+}
+
+.custom-alert-message {
+    font-size: 14.5px;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.custom-alert-btn {
+    background-color: #54a0ff;
+    color: white;
+    border: none;
+    padding: 11px 0;
+    font-size: 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 65%;
+    margin: 0 auto;
+    display: block;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(84, 160, 255, 0.2);
+}
+
+.custom-alert-btn:active {
+    transform: scale(0.96);
+}
+
+@keyframes alertPopUp {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

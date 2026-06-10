@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suluk - جاري التحميل...</title>
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@14.0.1"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="splashBox" class="splash-box">
+        <img src="index.png" alt="Suluk Logo" class="circle-logo">
+    </div>
+
+    <div id="mainContainer"></div>
+
+    <div id="customAlert" class="custom-alert-overlay hidden">
+        <div class="custom-alert-box">
+            <div class="custom-alert-avatar">
+                <i data-feather="wifi-off" class="custom-alert-icon"></i>
+            </div>
+            <h3 class="custom-alert-title">خطأ في الاتصال</h3>
+            <p id="customAlertMessage" class="custom-alert-message">لا يوجد اتصال بالإنترنت، يرجى التحقق من الشبكة وإعادة المحاولة.</p>
+            <button id="customAlertBtn" class="custom-alert-btn">إعادة المحاولة</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

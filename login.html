@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suluk - الدخول والتسجيل</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+    <div class="bg-waves"></div>
+
+    <div class="main-wrapper" id="appMainContent">
+        
+        <div id="loginSection" class="auth-section">
+            <div class="avatar-box">
+                <i data-feather="user" class="avatar-icon"></i>
+            </div>
+
+            <p class="welcome-msg">مرحباً بك مجدداً!</p>
+            <h2 class="form-title">تسجيل الدخول</h2>
+
+            <div class="input-group">
+                <i data-feather="mail" class="field-icon"></i>
+                <input type="text" placeholder="اسم المستخدم أو البريد الإلكتروني" required>
+            </div>
+
+            <div class="input-group password-wrapper">
+                <i data-feather="lock" class="field-icon"></i>
+                <input type="password" class="password-field" placeholder="كلمة المرور" required>
+                <i data-feather="eye" class="toggle-password"></i>
+            </div>
+
+            <p class="forgot-link">نسيت كلمة المرور؟</p>
+
+            <button class="action-btn" id="submitLogin">تسجيل الدخول</button>
+
+            <p class="toggle-text">ليس لديك حساب؟ <span id="toRegister">إنشاء حساب</span></p>
+        </div>
+
+        <div id="registerSection" class="auth-section hidden">
+            <div class="avatar-box">
+                <i data-feather="user-plus" class="avatar-icon"></i>
+            </div>
+
+            <h2 class="form-title">إنشاء حساب جديد</h2>
+            <p class="welcome-msg" style="margin-top: -15px; margin-bottom: 25px;">ابدأ رحلتك معنا</p>
+
+            <div class="field-row">
+                <div class="input-group">
+                    <i data-feather="user" class="field-icon"></i>
+                    <input type="text" placeholder="الاسم الكامل" required>
+                </div>
+                <div class="input-group">
+                    <i data-feather="at-sign" class="field-icon"></i>
+                    <input type="text" placeholder="اسم المستخدم" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <i data-feather="mail" class="field-icon"></i>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+            </div>
+
+            <div class="input-group password-wrapper">
+                <i data-feather="lock" class="field-icon"></i>
+                <input type="password" class="password-field" placeholder="كلمة المرور" required>
+                <i data-feather="eye" class="toggle-password"></i>
+            </div>
+
+            <div class="field-row gender-selection">
+                <label class="gender-label">
+                    <input type="radio" name="gender" value="male" checked>
+                    <div class="gender-btn">
+                        <i data-feather="user" class="gender-icon"></i>
+                        <span>ذكر</span>
+                    </div>
+                </label>
+                <label class="gender-label">
+                    <input type="radio" name="gender" value="female">
+                    <div class="gender-btn">
+                        <i data-feather="user" class="gender-icon"></i>
+                        <span>أنثى</span>
+                    </div>
+                </label>
+            </div>
+
+            <button class="action-btn" id="submitRegister">أنشأ حساب</button>
+
+            <p class="toggle-text">لديك حساب بالفعل؟ <span id="toLogin">تسجيل الدخول</span></p>
+        </div>
+
+    </div>
+
+    <!-- نافذة التنبيه المخصصة التي يتم استدعاؤها لحجب العمليات فوراً في حالة عدم وجود إنترنت -->
+    <div id="customAlert" class="custom-alert-overlay hidden">
+        <div class="custom-alert-box">
+            <div class="custom-alert-avatar" style="background: #fef2f2;">
+                <i data-feather="wifi-off" style="color: #ef4444; width: 28px; height: 28px;"></i>
+            </div>
+            <h3 class="custom-alert-title">خطأ في الاتصال</h3>
+            <p id="customAlertMessage" class="custom-alert-message">لا يوجد اتصال بالإنترنت، يرجى التحقق من الشبكة وإعادة المحاولة.</p>
+            <button id="customAlertBtn" class="custom-alert-btn">فهمت</button>
+        </div>
+    </div>
+
+    <script type="module" src="login-script.js"></script>
+
+</body>
+</html>

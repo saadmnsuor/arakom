@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>تطبيق المجتمع</title>
+
+<script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.replace('login.html');
+    }
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home-style.css">
+</head>
+<body>
+
+<div id="app">
+  
+  <main id="page">
+    <div id="mainContainer"></div>
+  </main>
+
+  <nav class="bnav" id="bnav">
+    <button class="nav-i on" data-t="home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>الرئيسية</span>
+    </button>
+    
+    <button class="nav-i" data-t="feed">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      <span>المنشورات</span>
+    </button>
+
+    <button class="nav-i" data-t="rooms">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+      <span>الغرف</span>
+    </button>
+    
+    <button class="nav-i" data-t="chats">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>المحادثات</span>
+    </button>
+    
+    <button class="nav-i" data-t="me">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>حسابي</span>
+    </button>
+  </nav>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/appwrite@13.0.0"></script>
+<script src="home.js"></script>
+
+<script>
+  // تأكد من أن الصفحة تعمل بشكل صحيح
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ صفحة home.html تحميلت بنجاح');
+  });
+</script>
+
+</body>
+</html>

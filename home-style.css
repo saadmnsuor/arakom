@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* منع الوميض الأزرق */
+  user-select: none; /* منع التحديد والنسخ */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img, .pimg, .prof-cover-bg {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+:root {
+  --bg: #f0f4f8;
+  --bg2: #ffffff;
+  --bg3: #e8edf4;
+  --bg4: #dce4ed;
+  --card: #ffffff;
+  --border: #d0d8e4;
+  --primary: #0077b6;
+  --primary-d: #005a8c;
+  --primary-glow: rgba(0, 119, 182, 0.15);
+  --text: #1a2332;
+  --muted: #6b7a8f;
+  --soft: #8a9bb5;
+  --success: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --gold: #f59e0b;
+  --purple: #7c3aed;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+html, body {
+  height: 100%;
+  background: #e8edf4;
+  font-family: 'Tajawal', sans-serif;
+  color: var(--text);
+}
+
+#app {
+  max-width: 430px;
+  margin: 0 auto;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0, 119, 182, 0.1);
+}
+
+/* ── PAGE AREA ── */
+#page {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+#page::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── BOTTOM NAV ── */
+.bnav {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  padding-bottom: env(safe-area-inset-bottom, 6px);
+  height: 62px;
+  flex-shrink: 0;
+  z-index: 10;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+.nav-i {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--muted);
+  transition: color .2s, transform .1s;
+  position: relative;
+  font-family: 'Tajawal', sans-serif;
+}
+.nav-i.on {
+  color: var(--primary);
+}
+.nav-i span {
+  font-size: 11px;
+  font-weight: 600;
+}
+.nav-i:active {
+  transform: scale(0.94);
+}
+
+/* ── تحسينات إضافية للوضع الفاتح ── */
+
+/* تنسيق بطاقات المحتوى */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* تنسيق النصوص */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+/* تنسيق الروابط */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-d);
+}
+
+/* تنسيق الأزرار */
+button {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* تنسيق حقول الإدخال */
+input, textarea, select {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Tajawal', sans-serif;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* تنسيق الشريط العلوي إذا وجد */
+.top-bar {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+
+/* تنسيق القوائم المنسدلة */
+.dropdown {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
