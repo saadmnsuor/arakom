@@ -5,14 +5,14 @@ const { Client, Storage, ID } = Appwrite;
 
 const client = new Client();
 client
-    .setEndpoint('https://fra.cloudappwrite.io/v1') 
-    .setProject('6a28957c0016e8cd3e74');           
+    .setEndpoint('https://fra.cloud.appwrite.io/v1') 
+    .setProject('6a29dd0a001d12f59a5d');           
 
 const appwriteStorage = new Storage(client);
 const BUCKET_ID = 'arakom'; 
 
 // ═══════════════════════════════════════════════════════
-//  2. دالة رفع الملفات الأساسية
+//  2. دالة رفع الملفات الأساسية (معدلة)
 // ═══════════════════════════════════════════════════════
 async function uploadFileToAppwrite(fileObject) {
   try {
@@ -21,7 +21,7 @@ async function uploadFileToAppwrite(fileObject) {
       ID.unique(),
       fileObject
     );
-    return `https://fra.cloudappwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${response.$id}/view?project=6a28957c0016e8cd3e74`;
+    return `https://fra.cloudappwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${response.$id}/view?project=6a29dd0a001d12f59a5d`;
   } catch (error) {
     console.error("❌ خطأ في الرفع:", error.message);
     throw error;
@@ -29,7 +29,7 @@ async function uploadFileToAppwrite(fileObject) {
 }
 
 // ═══════════════════════════════════════════════════════
-//  3. دالة رفع صورة الملف الشخصي
+//  3. دالة رفع صورة الملف الشخصي (معدلة)
 // ═══════════════════════════════════════════════════════
 async function uploadProfileImage(fileObject) {
   try {
@@ -38,7 +38,7 @@ async function uploadProfileImage(fileObject) {
       ID.unique(),
       fileObject
     );
-    const imageUrl = `https://fra.cloudappwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${response.$id}/view?project=6a28957c0016e8cd3e74`;
+    const imageUrl = `https://fra.cloudappwrite.io/v1/storage/buckets/${BUCKET_ID}/files/${response.$id}/view?project=6a29dd0a001d12f59a5d`;
     
     // حفظ رابط الصورة في localStorage
     localStorage.setItem('profileImage', imageUrl);
